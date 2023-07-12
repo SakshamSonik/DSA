@@ -1,0 +1,33 @@
+
+#include <stdio.h>
+void display(int arr[],int n){
+    for(int i=0;i<n;i++){
+        printf("%d ",arr[i]);
+    }
+    printf("\n");
+}
+int insertion(int arr[], int size, int element, int capacity, int pos){
+    if(pos>=capacity){
+        return -1;
+    }
+    else{
+        for(int i=size-1;i>=pos;i--){
+            arr[i+1] = arr[i];
+            
+            
+        }
+        arr[pos] = element;
+        return 1;
+    }
+}
+int main()
+{
+   int arr[10] = {2,4,5,3,21};
+   int size = 5, pos= 3, element = 33; 
+display(arr,size);
+   insertion(arr,size,element,10,pos);
+   size+=1;
+   display(arr,size);
+    return 0;
+}
+
